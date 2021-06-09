@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import firebase from "firebase";
+import { db } from "./firebase";
+// Add a new document in collection "cities"
+db.collection("cities").doc("LA").set({
+  name: "Los Angeles",
+  state: "CA",
+  country: "USA"
+})
+.then(() => {
+  console.log("Document successfully written!");
+})
+.catch((error) => {
+  console.error("Error writing document: ", error);
+});
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <h1>Just Clock</h1>
     </div>
   );
 }
 
 export default App;
+ 
