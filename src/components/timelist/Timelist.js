@@ -4,6 +4,11 @@ import firebase from "firebase";
 import { db } from "../../firebase";
 
 const Timelist = () => {
+    useEffect(() => {
+        db.collection("cities").doc("SF")
+    .onSnapshot((doc) => {
+        console.log("Current data: ", doc.data());
+        
     
    
     });
