@@ -4,17 +4,32 @@ import firebase from "firebase";
 import { db } from "../../firebase";
 
 const Timelist = () => {
+    const[times,setTimes]=useState({})
+
     useEffect(() => {
-        db.collection("cities").doc("SF")
-    .onSnapshot((doc) => {
-        console.log("Current data: ", doc.data());
+       
+        db.collection("times").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                const newTimes =querySnapshot.docs.map((doc)=>({ 
+                    id: doc.id,
+              ... doc.data()
+             
+                }))
+                console.log(newTimes)
+                setTimes(newTimes)
+                
+            });
+        });
         
     
    
-    });
+    
     
         
     }, [])
+
+
     
     return (
         <div>

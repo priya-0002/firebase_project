@@ -5,10 +5,10 @@ import { db } from "./firebase";
 import Timelist from './components/timelist/Timelist';
 import AddTimeEntry from './components/addtimeentry/AddTimeEntry';
 // Add a new document in collection "cities"
-db.collection("cities").doc("LA").set({
-  name: "Los Angeles",
-  state: "CA",
-  country: "USA"
+db.collection("times").doc("1").set({
+  time_seconds: "45",
+  title: "Rubik's Cube",
+  
 })
 .then(() => {
   console.log("Document successfully written!");
