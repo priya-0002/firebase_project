@@ -32,7 +32,7 @@ const Timelist = () => {
     }, [])
 
   
-
+console.log(times)
     
     return (
         <div>
@@ -48,11 +48,13 @@ const Timelist = () => {
           </select>
         </div>
         <ol>
-        <li key={times[0].id}>
-            {times[0].title}   {''} : {''}
-            <code>{times[0].time_seconds} seconds</code>
+            {times.map((time)=>
+        <li key={time.id}>
+          {time.title}    {''} : {''}
+            <code>{time.time_seconds} seconds</code>
             
         </li>
+            )}
         </ol>
         
      
