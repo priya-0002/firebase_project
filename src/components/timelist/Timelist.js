@@ -4,7 +4,7 @@ import firebase from "firebase";
 import { db } from "../../firebase";
 
 const Timelist = () => {
-    const[times,setTimes]=useState({})
+    const[times,setTimes]=useState([{}])
 
     useEffect(() => {
        
@@ -18,17 +18,20 @@ const Timelist = () => {
                 }))
                 console.log(newTimes)
                 setTimes(newTimes)
+
+    
                 
             });
         });
         
-    
+     
    
     
     
         
     }, [])
 
+  
 
     
     return (
@@ -44,34 +47,15 @@ const Timelist = () => {
         <option>Tittle(z-a)</option>
           </select>
         </div>
-        
         <ol>
-            <li>
-                <div className="time-entry">
-                    My Tittle
-                    <code className="time-entry">18 seconds</code>
-                </div>
-
-            </li>
-        
-        
-            <li>
-                <div className="time-entry">
-                    Wearing Shoes
-                    <code className="time-entry">89 seconds</code>
-                </div>
-
-            </li>
-        
-        
-            <li>
-                <div className="time-entry">
-                    Drinking
-                    <code className="time-entry">10 seconds</code>
-                </div>
-
-            </li>
+        <li key={times[0].id}>
+            {times[0].title}   {''} : {''}
+            <code>{times[0].time_seconds} seconds</code>
+            
+        </li>
         </ol>
+        
+     
         </div>
     )
 }
