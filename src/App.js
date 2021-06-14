@@ -22,7 +22,7 @@ db.collection("times").doc("1").set({
 function App() {
   return (
     <div className="App">
-       <h1>Just Clock</h1>
+       <h1>Today's Agenda</h1>
        <Timelist/>
        <AddTimeEntry/>
     </div>
