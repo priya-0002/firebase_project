@@ -37,7 +37,16 @@ console.log(times)
     return (
         <div>
         
-        
+         {/* <div>
+          <label> Sort By:</label> {''}
+          <select>
+        <option>Time(fastest first)</option>
+        <option>Time(slowest first)</option>
+        <option disabled>-----</option>
+        <option>Tittle(a-z)</option>
+        <option>Tittle(z-a)</option>
+          </select>
+         </div>*/}
         <ol>
             {times.map((time)=>
         <li key={time.id}>
